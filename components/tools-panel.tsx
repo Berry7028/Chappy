@@ -35,30 +35,30 @@ export default function ContextPanel() {
     <div className="h-full p-8 w-full bg-[#f9f9f9] rounded-t-xl md:rounded-none border-l-1 border-stone-100">
       <div className="flex flex-col overflow-y-scroll h-full">
         <PanelConfig
-          title="File Search"
-          tooltip="Allows to search a knowledge base (vector store)"
+          title="ファイル検索"
+          tooltip="ナレッジベース（ベクターストア）を検索できます"
           enabled={fileSearchEnabled}
           setEnabled={setFileSearchEnabled}
         >
           <FileSearchSetup />
         </PanelConfig>
         <PanelConfig
-          title="Web Search"
-          tooltip="Allows to search the web"
+          title="Web検索"
+          tooltip="Webを検索できます"
           enabled={webSearchEnabled}
           setEnabled={setWebSearchEnabled}
         >
           <WebSearchConfig />
         </PanelConfig>
         <PanelConfig
-          title="Code Interpreter"
-          tooltip="Allows the assistant to run Python code"
+          title="コードインタープリター"
+          tooltip="アシスタントがPythonコードを実行できます"
           enabled={codeInterpreterEnabled}
           setEnabled={setCodeInterpreterEnabled}
         />
         <PanelConfig
-          title="Functions"
-          tooltip="Allows to use locally defined functions"
+          title="関数"
+          tooltip="ローカルで定義された関数を使用できます"
           enabled={functionsEnabled}
           setEnabled={setFunctionsEnabled}
         >
@@ -66,15 +66,15 @@ export default function ContextPanel() {
         </PanelConfig>
         <PanelConfig
           title="MCP"
-          tooltip="Allows to call tools via remote MCP server"
+          tooltip="リモートMCPサーバー経由でツールを呼び出せます"
           enabled={mcpEnabled}
           setEnabled={setMcpEnabled}
         >
           <McpConfig />
         </PanelConfig>
         <PanelConfig
-          title="Google Integration"
-          tooltip="Connect your Google account to enable Gmail and Calendar features."
+          title="Google統合"
+          tooltip="Googleアカウントを接続してGmailとカレンダー機能を有効にします。"
           enabled={oauthConfigured && googleIntegrationEnabled}
           setEnabled={setGoogleIntegrationEnabled}
           disabled={!oauthConfigured}

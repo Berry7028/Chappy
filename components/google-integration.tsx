@@ -29,11 +29,11 @@ export default function GoogleIntegrationPanel() {
           {oauthConfigured ? (
             googleIntegrationEnabled ? (
               <a href="/api/google/auth">
-                <Button>Connect Google Integration</Button>
+                <Button>Google統合を接続</Button>
               </a>
             ) : (
               <span className="inline-flex">
-                <Button disabled>Connect Google Integration</Button>
+                <Button disabled>Google統合を接続</Button>
               </span>
             )
           ) : (
@@ -41,12 +41,12 @@ export default function GoogleIntegrationPanel() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <span className="inline-flex">
-                    <Button disabled>Connect Google Integration</Button>
+                    <Button disabled>Google統合を接続</Button>
                   </span>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>
-                    GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_REDIRECT_URI must be set in .env.local to use the Google Integration.
+                    Google統合を使用するには、.env.localでGOOGLE_CLIENT_ID、GOOGLE_CLIENT_SECRET、GOOGLE_REDIRECT_URIを設定する必要があります。
                   </p>
                 </TooltipContent>
               </Tooltip>
@@ -69,7 +69,7 @@ export default function GoogleIntegrationPanel() {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm text-gray-700">Google Integration connected</p>
+            <p className="text-sm text-gray-700">Google統合が接続されました</p>
           </div>
         </div>
       )}

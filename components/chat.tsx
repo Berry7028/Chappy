@@ -91,7 +91,7 @@ const Chat: React.FC<ChatProps> = ({
                       tabIndex={0}
                       dir="auto"
                       rows={2}
-                      placeholder="Message..."
+                      placeholder="メッセージを入力..."
                       className="mb-2 resize-none border-0 focus:outline-none text-sm bg-transparent px-0 pb-6 pt-2"
                       value={inputMessageText}
                       onChange={(e) => setinputMessageText(e.target.value)}

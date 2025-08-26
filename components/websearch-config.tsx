@@ -37,18 +37,18 @@ export default function WebSearchSettings() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <div className="text-zinc-600 text-sm">User&apos;s location</div>
+        <div className="text-zinc-600 text-sm">ユーザーの位置情報</div>
         <div
           className="text-zinc-400 text-sm px-1 transition-colors hover:text-zinc-600 cursor-pointer"
           onClick={handleClear}
         >
-          Clear
+          クリア
         </div>
       </div>
       <div className="mt-3 space-y-3 text-zinc-400">
         <div className="flex items-center gap-2">
           <label htmlFor="country" className="text-sm w-20">
-            Country
+            国
           </label>
           <CountrySelector
             value={webSearchConfig.user_location?.country ?? ""}
@@ -58,12 +58,12 @@ export default function WebSearchSettings() {
 
         <div className="flex items-center gap-2">
           <label htmlFor="region" className="text-sm w-20">
-            Region
+            地域
           </label>
           <Input
             id="region"
             type="text"
-            placeholder="Region"
+            placeholder="地域"
             className="bg-white border text-sm flex-1 text-zinc-900 placeholder:text-zinc-400"
             value={webSearchConfig.user_location?.region ?? ""}
             onChange={(e) => handleLocationChange("region", e.target.value)}
@@ -72,12 +72,12 @@ export default function WebSearchSettings() {
 
         <div className="flex items-center gap-2">
           <label htmlFor="city" className="text-sm w-20">
-            City
+            都市
           </label>
           <Input
             id="city"
             type="text"
-            placeholder="City"
+            placeholder="都市"
             className="bg-white border text-sm flex-1 text-zinc-900 placeholder:text-zinc-400"
             value={webSearchConfig.user_location?.city ?? ""}
             onChange={(e) => handleLocationChange("city", e.target.value)}

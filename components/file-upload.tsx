@@ -32,7 +32,7 @@ export default function FileUpload({
   onUnlinkStore,
 }: FileUploadProps) {
   const [file, setFile] = useState<File | null>(null);
-  const [newStoreName, setNewStoreName] = useState<string>("Default store");
+  const [newStoreName, setNewStoreName] = useState<string>("デフォルトストア");
   const [uploading, setUploading] = useState<boolean>(false);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
@@ -92,7 +92,7 @@ export default function FileUpload({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!file) {
-      alert("Please select a file to upload.");
+      alert("アップロードするファイルを選択してください。");
       return;
     }
     setUploading(true);
@@ -165,7 +165,7 @@ export default function FileUpload({
       setDialogOpen(false);
     } catch (error) {
       console.error("Error during file upload process:", error);
-      alert("There was an error processing your file. Please try again.");
+      alert("ファイルの処理中にエラーが発生しました。もう一度お試しください。");
     } finally {
       setUploading(false);
     }
@@ -176,23 +176,23 @@ export default function FileUpload({
       <DialogTrigger asChild>
         <div className="bg-white rounded-full flex items-center justify-center py-1 px-3 border border-zinc-200 gap-1 font-medium text-sm cursor-pointer hover:bg-zinc-50 transition-all">
           <Plus size={16} />
-          Upload
+          アップロード
         </div>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] md:max-w-[600px] max-h-[80vh] overflow-y-scrollfrtdtd">
         <form onSubmit={handleSubmit}>
-          <DialogHeader>
-            <DialogTitle>Add files to your vector store</DialogTitle>
-          </DialogHeader>
+                      <DialogHeader>
+              <DialogTitle>ベクターストアにファイルを追加</DialogTitle>
+            </DialogHeader>
           <div className="my-6">
             {!vectorStoreId || vectorStoreId === "" ? (
               <div className="flex items-start gap-2 text-sm">
-                <label className="font-medium w-72" htmlFor="storeName">
-                  New vector store name
-                  <div className="text-xs text-zinc-400">
-                    A new store will be created when you upload a file.
-                  </div>
-                </label>
+                                  <label className="font-medium w-72" htmlFor="storeName">
+                   新しいベクターストア名
+                   <div className="text-xs text-zinc-400">
+                     ファイルをアップロードすると新しいストアが作成されます。
+                   </div>
+                 </label>
                 <Input
                   id="storeName"
                   type="text"
@@ -204,9 +204,9 @@ export default function FileUpload({
             ) : (
               <div className="flex items-center justify-between flex-1 min-w-0">
                 <div className="flex items-center gap-2 min-w-0">
-                  <div className="text-sm font-medium w-24 text-nowrap">
-                    Vector store
-                  </div>
+                                    <div className="text-sm font-medium w-24 text-nowrap">
+                     ベクターストア
+                   </div>
                   <div className="text-zinc-400  text-xs font-mono flex-1 text-ellipsis truncate">
                     {vectorStoreId}
                   </div>
@@ -220,7 +220,7 @@ export default function FileUpload({
                         />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Unlink vector store</p>
+                        <p>ベクターストアのリンクを解除</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -231,7 +231,7 @@ export default function FileUpload({
           <div className="flex justify-center items-center mb-4 h-[200px]">
             {file ? (
               <div className="flex flex-col items-start">
-                <div className="text-zinc-400">Loaded file</div>
+                <div className="text-zinc-400">読み込まれたファイル</div>
                 <div className="flex items-center mt-2">
                   <div className="text-zinc-900 mr-2">{file.name}</div>
 
@@ -258,7 +258,7 @@ export default function FileUpload({
                   ></div>
                   <div className="flex flex-col items-center text-center z-10 cursor-pointer">
                     <FilePlus2 className="mb-4 size-8 text-zinc-700" />
-                    <div className="text-zinc-700">Upload a file</div>
+                    <div className="text-zinc-700">ファイルをアップロード</div>
                   </div>
                 </div>
               </div>
@@ -266,7 +266,7 @@ export default function FileUpload({
           </div>
           <DialogFooter>
             <Button type="submit" disabled={uploading}>
-              {uploading ? "Uploading..." : "Add"}
+              {uploading ? "アップロード中..." : "追加"}
             </Button>
           </DialogFooter>
         </form>

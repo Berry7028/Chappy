@@ -41,8 +41,7 @@ export default function McpToolsList({ item }: Props) {
       <div className="flex">
         <div className="mr-4 rounded-[16px] px-4 py-2 md:mr-24 text-black bg-white font-light">
           <div className="text-sm mb-2 text-blue-500">
-            Server <span className="font-semibold">{item.server_label}</span>{" "}
-            tools list
+            サーバー <span className="font-semibold">{item.server_label}</span> のツール一覧
           </div>
           <div className="space-y-2 text-sm mt-3">
             {item.tools.map((tool) => (

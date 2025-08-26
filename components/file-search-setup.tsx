@@ -28,7 +28,7 @@ export default function FileSearchSetup() {
         console.log("Retrieved store:", newStore);
         setVectorStore(newStore);
       } else {
-        alert("Vector store not found");
+        alert("ベクターストアが見つかりません");
       }
     }
   };
@@ -36,12 +36,12 @@ export default function FileSearchSetup() {
   return (
     <div>
       <div className="text-sm text-zinc-500">
-        Upload a file to create a new vector store, or use an existing one.
+        ファイルをアップロードして新しいベクターストアを作成するか、既存のものを使用してください。
       </div>
       <div className="flex items-center gap-2 mt-2 h-10">
         <div className="flex items-center gap-2 w-full">
           <div className="text-sm font-medium w-24 text-nowrap">
-            Vector store
+            ベクターストア
           </div>
           {vectorStore?.id ? (
             <div className="flex items-center justify-between flex-1 min-w-0">
@@ -59,7 +59,7 @@ export default function FileSearchSetup() {
                       />
                     </TooltipTrigger>
                     <TooltipContent className="mr-2">
-                      <p>Unlink vector store</p>
+                      <p>ベクターストアのリンクを解除</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -83,7 +83,7 @@ export default function FileSearchSetup() {
                 className="text-zinc-400 text-sm px-1 transition-colors hover:text-zinc-600 cursor-pointer"
                 onClick={() => handleAddStore(newStoreId)}
               >
-                Add
+                追加
               </div>
             </div>
           )}
